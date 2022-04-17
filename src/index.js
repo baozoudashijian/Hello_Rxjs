@@ -1,10 +1,7 @@
-import { Observable  } from 'rxjs'
+import { fromEvent } from 'rxjs';
 
 const $input = document.querySelector('.todo-val')
 
-const input$ = Observable.fromEvent($input, 'keydown')
-  .do(e => console.log(e))
+const input$ = fromEvent($input, 'keydown')
 
-const app$ = input$
-
-app$.subscribe()
+input$.subscribe(x => console.log(x));
